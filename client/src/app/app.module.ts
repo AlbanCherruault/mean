@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {LayoutModule} from "./shared/layout/layout.module";
 import {RouterModule} from "@angular/router";
 import {APP_ROUTING} from "./app.routing";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {APP_ROUTING} from "./app.routing";
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
-    RouterModule.forRoot(APP_ROUTING)
+    RouterModule.forRoot(APP_ROUTING),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
