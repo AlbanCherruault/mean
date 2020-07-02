@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {AuthService} from "../shared/services/auth.service";
+import {Router} from "@angular/router";
+import {User} from "../shared/models/user.model";
 
 @Component({
   selector: 'app-signup',
@@ -8,22 +11,31 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  public signupForm: FormGroup;
+  public form: FormGroup;
+  public error:string;
+
 
   constructor(
     private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+
   ) { }
 
   ngOnInit() {
-    this.signupForm = this.fb.group({
+    this.form = this.fb.group({
       username: [''],
       email: [''],
       password: ['']
     });
   }
 
-  public trySignup() {
-
+  public submit():void{
+    this.authService.signup(this.form.value).subscribe( (user:User)=> {
+      this.router.navigate(['/signin']);
+    }, err => {
+      this.error = err;
+    })
   }
 
 }

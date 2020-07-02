@@ -11,6 +11,7 @@ import {LayoutModule} from "./shared/layout/layout.module";
 import {RouterModule} from "@angular/router";
 import {APP_ROUTING} from "./app.routing";
 import {ReactiveFormsModule} from "@angular/forms";
+import {AuthService} from "./shared/services/auth.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     RouterModule.forRoot(APP_ROUTING),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
