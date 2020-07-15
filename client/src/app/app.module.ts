@@ -12,6 +12,7 @@ import {RouterModule} from "@angular/router";
 import {APP_ROUTING} from "./app.routing";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "./shared/services/auth.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {AuthService} from "./shared/services/auth.service";
     BrowserAnimationsModule,
     LayoutModule,
     RouterModule.forRoot(APP_ROUTING),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
