@@ -19,24 +19,25 @@ export class AuthService {
         this.initToken();
   }
 
-  private initToken():void{
-        const token = localStorage.getItem('jwt');
-        if (token){
-          this.jwtToken.next({
-            isAuthenticated:true,
-            token:token
-          });
-        } else {
-            this.jwtToken.next({
-              isAuthenticated:false,
-              token:null
-            });
-        }
+  private initToken(): void {
+    const token = localStorage.getItem('jwt');
+    if (token) {
+      this.jwtToken.next({
+        isAuthenticated: true,
+        token: token
+      });
+    } else {
+      this.jwtToken.next({
+        isAuthenticated: false,
+        token: null
+      });
+    }
   }
 
 
   public signup(user:User): Observable<User> {
-    return this.http.post<User>('/api/auth',user);
+    console.log("Test")
+    return this.http.post<User>('api/auth/signup',user);
   }
 
   public signin(credentials: { email: string, password: string}): Observable<string> {

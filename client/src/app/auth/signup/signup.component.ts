@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {AuthService} from "../shared/services/auth.service";
+import {AuthService} from "../../shared/services/auth.service";
 import {Router} from "@angular/router";
-import {User} from "../shared/models/user.model";
+import {User} from "../../shared/models/user.model";
 
 @Component({
   selector: 'app-signup',
@@ -31,11 +31,12 @@ export class SignupComponent implements OnInit {
   }
 
   public submit():void{
-    this.authService.signup(this.form.value).subscribe( (user:User)=> {
-      this.router.navigate(['/signin']);
-    }, err => {
+    this.authService.signin(this.form.value).subscribe( () => {
+      this.router.navigate(['/']);
+    }, err =>{
       this.error = err;
-    })
+
+    });
   }
 
 }

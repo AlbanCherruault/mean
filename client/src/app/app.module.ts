@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { SignupComponent } from './signup/signup.component';
-import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 import { TopbarComponent } from './shared/components/topbar/topbar.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {LayoutModule} from "./shared/layout/layout.module";
