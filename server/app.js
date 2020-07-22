@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
 
 mongoose.connect(
-  "mongodb+srv://angulardyma:123123123@cluster0-urpjt.gcp.mongodb.net/angulardyma?retryWrites=true&w=majority",
+  "mongodb+srv://angulardyma:Pookie1234!@cluster0-nr33g.mongodb.net/angulardyma?retryWrites=true&w=majority",
   {
     keepAlive: true,
     reconnectTries: Number.MAX_VALUE,
